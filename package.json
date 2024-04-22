@@ -1,0 +1,15 @@
+{
+  "name": "aptos-sdk-demo",
+  "version": "1.0.0",
+  "description": "A demo project using the Aptos SDK",
+  "main": "main.js",
+  "scripts": {
+    "start": "tsc && node main.js"
+  },
+  "dependencies": {
+    "aptos": "^1.3.17"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
