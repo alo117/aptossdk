@@ -1,9 +1,23 @@
-import { AptosClient, AptosAccount } from "aptos";
+import { Aptos } from '@aptos-labs/ts-sdk';
 
-// Connect to the Aptos network
-const client = new AptosClient("https://fullnode.devnet.aptoslabs.com");
+// Set up Aptos
+const aptos = new Aptos(); // default to devnet
 
-// Create a new account
-const account = new AptosAccount();
+// Fetch data from the chain
+const ledgerInfo = await aptos.getLedgerInfo();
+const modules = await aptos.getAccountModules({ accountAddress: "0x123" });
+const tokens = await aptos.getAccountOwnedTokens({ accountAddress: "0x123" });
 
-console.log("Account Address:", account.address());
+// Transfer APT coin transaction
+const transaction = await aptos.transferCoinTransaction({
+  sender: alice,
+  recipient: "0xbob", // Example recipient address
+  amount: 100,
+});
+const pendingTransaction = await aptos.signAndSubmitTransaction({
+  signer: alice,
+  transaction,
+});
+
+// Build and submit transaction
+// (Code for generating account key pair, funding account, building transaction, and submitting transaction)
