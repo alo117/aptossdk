@@ -7,9 +7,13 @@
     "start": "tsc && node main.js"
   },
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.13.1",
     "aptos": "^1.3.17"
   },
   "devDependencies": {
     "typescript": "^4.9.5"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
