@@ -1,4 +1,5 @@
 import { Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
+import { Account } from './account';
 
 // Set up Aptos client with custom configuration
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
@@ -9,5 +10,8 @@ async function main() {
   const ledgerInfo = await aptos.getLedgerInfo();
   console.log('Ledger Info:', ledgerInfo);
 }
+
+const aliceAccount = new Account('0x1234', 1000);
+console.log('Alice Account:', aliceAccount);
 
 main().catch(console.error);
