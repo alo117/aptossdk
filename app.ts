@@ -14,4 +14,7 @@ async function main() {
 const aliceAccount = new Account('0x1234', 1000);
 console.log('Alice Account:', aliceAccount);
 
+aptos.getLedgerInfo().then((ledgerInfo) => {
+  console.log('Ledger Info:', ledgerInfo);
+
 main().catch(console.error);

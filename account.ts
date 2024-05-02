@@ -6,4 +6,12 @@ export class Account {
       this.address = address;
       this.balance = balance;
     }
+    transfer(recipient: string, amount: number) {
+        if (this.balance < amount) {
+          console.log('Insufficient balance');
+          return;
+        }
+        this.balance -= amount;
+        console.log(`Transferred ${amount} to ${recipient}. Remaining balance: ${this.balance}`);
+      }
   }
